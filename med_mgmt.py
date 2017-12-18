@@ -3,8 +3,8 @@ import time
 import sqlite3
 import random
 import tempfile
-import win32api
-import win32print
+#import win32api
+#import win32print
 
 f=''
 flag=''
@@ -594,8 +594,8 @@ def make_bill(): # makes bill
     cur.execute('insert into bills values(?,?,?,?,?,?,?,?)',(det[0],det[1],det[2],det[3],det[4],det[5],det[6],det[7]))
     c.commit()
     
-def print_bill():
-    win32api.ShellExecute (0,"print",B,'/d:"%s"' % win32print.GetDefaultPrinter (),".",0)
+#def print_bill():
+#    win32api.ShellExecute (0,"print",B,'/d:"%s"' % win32print.GetDefaultPrinter (),".",0)
     
 def show_rev(): # opens revenue window-----------------------------------------------------------------------TOTAL REVENUE
     global c, cur, flag,rev
