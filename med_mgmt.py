@@ -22,7 +22,7 @@ def open_win(): #OPENS MAIN MENU------------------------------------------------
     global apt, flag
     flag='apt'
     apt=Tk()
-    apt.title("Interface")
+    apt.title("DHPRV Solutions")
     Label(apt, text="CHEMIST AND DRUGSHOP").grid(row=0,column=0,columnspan=3)
     Label(apt, text='*'*80).grid(row=1,column=0,columnspan=3)
     Label(apt, text='-'*80).grid(row=3,column=0,columnspan=3) 
