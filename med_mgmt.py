@@ -2,6 +2,7 @@ import random
 import sqlite3
 import time
 import tempfile
+
 from tkinter import *
 
 # import win32api
@@ -48,7 +49,7 @@ def open_win():  # OPENS MAIN MENU----------------------------------------------
     apt.mainloop()
 
 
-def delete_stock():  # OPENS DELETE WINDOW----------------------------------------------------DELETES A PARTICULAR STOCK ITEM
+def delete_stock():  # OPENS DELETE WINDOW----------------------------------------------DELETES A PARTICULAR STOCK ITEM
     global cur, c, flag, lb1, d
     apt.destroy()
     flag = 'd'
@@ -433,7 +434,7 @@ def exp_dt():  # shows medicine to expire in the coming week
     c.commit()
 
 
-def billing():  # to create bills for customer-------------------------------------------------------------BILLING system
+def billing():  # to create bills for customer------------------------------------------------------------BILLING system
     global c, cur, apt, flag, t, name, name1, add, st, names, qty, sl, qtys, vc_id, n, namee, lb1
     t = 0
     vc_id = ''
@@ -580,8 +581,8 @@ def make_bill():  # makes bill
     m = '\n\n\n'
     m += "===============================================\n"
     m += "                                  No :%s\n\n" % det[5]
-    m += "          MEDPLUS CHEMIST AND DRUGGIST\n"
-    m += "  VIT University, Katpadi, Vellore, T.M.\n\n"
+    m += "             Hazira Dispensary\n"
+    m += "       Hazira, Surat, Gujarat, India\n\n"
     m += "-----------------------------------------------\n"
     if t == 1:
         m += "Name: %s\n" % named
@@ -637,7 +638,7 @@ def make_bill():  # makes bill
 # def print_bill():
 #    win32api.ShellExecute (0,"print",B,'/d:"%s"' % win32print.GetDefaultPrinter (),".",0)
 
-def show_rev():  # opens revenue window-----------------------------------------------------------------------TOTAL REVENUE
+def show_rev():  # opens revenue window--------------------------------------------------------------------TOTAL REVENUE
     global c, cur, flag, rev
     apt.destroy()
     cb = ('cus_name', 'cus_add', 'items', 'Total_cost', 'bill_dt', 'bill_no', 'bill', 'val_id')
@@ -668,7 +669,7 @@ def show_rev():  # opens revenue window-----------------------------------------
     rev.mainloop()
 
 
-def search():  # search window medicine and symptom details---------------------------------SEARCH MEDICINE RACK & SYMPTOMS
+def search():  # search window medicine and symptom details------------------------------SEARCH MEDICINE RACK & SYMPTOMS
     global c, cur, flag, st, mn, sym, flags
     flag = 'st'
     apt.destroy()
@@ -713,7 +714,7 @@ def search_med():
     top.mainloop()
 
 
-def val_cus():  # to enter new valued customer-----------------------------------------------------------NEW VALUED CUSTOMER
+def val_cus():  # to enter new valued customer-------------------------------------------------------NEW VALUED CUSTOMER
     global val, flag, dbt, name_vc, add_vc, cur, c, vc_id
     apt.destroy()
     cur.execute("select * from cus")
@@ -747,14 +748,14 @@ def val_get():  # to submit new valued customer details
     login.commit()
 
 
-def again():  # for login window-----------------------------------------------------------------------------LOGIN WINDOW
+def again():  # for login window----------------------------------------------------------------------------LOGIN WINDOW
     global un, pwd, flag, root, apt
     if flag == 'apt':
         apt.destroy()
     root = Tk()
-    root.title('YashVone SOFTWARE SOLUTIONS')
-    Label(root, text='CHEMIST AND DRUG SHOP').grid(row=0, column=0, columnspan=5)
-    Label(root, text="VIT UNIVERSITY, KATPADI, VELLORE,  TM").grid(row=1, column=0, columnspan=5)
+    root.title('DHPRV SOLUTIONS')
+    Label(root, text='Hazira Dispensary').grid(row=0, column=0, columnspan=5)
+    Label(root, text="Hazira, Surat, Gujarat,  India").grid(row=1, column=0, columnspan=5)
     Label(root, text='-------------------------------------------------------').grid(row=2, column=0, columnspan=5)
     Label(root, text='Username').grid(row=3, column=0)
     un = Entry(root, width=10)
@@ -782,7 +783,7 @@ def check():  # for enter button in login window
     login.commit()
 
 
-def main_menu():  # controls open and close of main menu window----------------------------------------RETURN TO MAIN MENU
+def main_menu():  # controls open and close of main menu window--------------------------------------RETURN TO MAIN MENU
     global sto, apt, flag, root, st, val, exp, st1, rev
     if flag == 'sto':
         sto.destroy()
@@ -815,7 +816,7 @@ def open_cus():  # OPENS MAIN MENU----------------------------------------------
     flags = 'apt1'
     apt = Tk()
     apt.title("Interface")
-    Label(apt, text="MEDPLUS CHEMIST AND DRUGGIST").grid(row=0, column=0)
+    Label(apt, text="Hazira Dispensary").grid(row=0, column=0)
     Label(apt, text='*' * 40).grid(row=1, column=0)
     Label(apt, text='*  WELCOME  *').grid(row=2, column=0)
     Label(apt, text='-' * 40).grid(row=3, column=0)
